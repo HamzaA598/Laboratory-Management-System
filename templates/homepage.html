@@ -1,0 +1,35 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Homepage</title>
+        <meta charset='UTF-8'>
+        <link rel="stylesheet" type="text/css" href="{% static 'css/homepage.css' %}">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script type='text/javascript' src="{% static 'js/homepage.js' %}" defer></script>
+    </head>
+    <body>
+        <div class = 'card' id = 'banner'>
+            <a class = 'text' href = "{% url 'homepage' %}"> <img class='img' src = "{% static 'images/homepage%20icon' %}" alt='homepage'></a>
+            <a class = 'text links' href = "{% url 'login' %}">Register/Login</a>
+            <a class = 'text links' href = "{% url 'labInfo' %}" onclick = 'return allow_access()'>View lab info</a>
+            <a class = 'text links' href = "{% url 'addNewLab' %}" onclick = 'return allow_access()'>Add a new lab</a>
+            <a class = 'text links' href = "{% url 'report' %}" onclick = 'return allow_access()'>Report a problem</a>
+            <a class = 'text links' href = "{% url 'AddNewPCs' %}" onclick = 'return allow_access()'>Add pc to lab</a>
+            <a class = "text links" href = "{% url 'list of pc' %}" onclick = 'return allow_access()'>Damaged PCs</a>
+        </div>
+        <div class = 'card'>
+        <p class = 'text'>
+            Welcome to our Labortatory tracking website's homepage. Here you can navigate to other links: <br>
+            <ul class = 'text'>
+                <li>Login: Here you can log into your account.</li>
+                <li>View lab info: Here you can view all labs and their info, you can also update or delete labs.</li>
+                <li>Add new lab: Here you can add a new lab to the system.</li>
+                <li>Report a problem: Here you can report a problem with a specific lab.</li>
+                <li>Add pc to lab: Here you can add a new PC to a specific lab.</li>
+                <li>Damaged PCs: Here you can view all PCs that need repair</li>
+            </ul>
+        </div>
+    </body>
+</html>

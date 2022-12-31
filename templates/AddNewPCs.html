@@ -1,0 +1,54 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> Add a New PC </title>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" type="text/css" href="{% static 'css/AddNewPCs.css' %}">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script type='text/javascript' src= "{% static 'js/AddNewPCs.js' %}" defer></script>
+    </head>
+    
+
+    <body>
+
+        <div class = 'card' id = 'banner'>
+            {% load static %}
+            <a class = 'text' href = "{% url 'homepage' %}"> <img class='img' src = "{% static 'images/homepage%20icon' %}" alt='homepage'></a>
+            <a class = 'text links' href = "{% url 'login' %}">Register/Login</a>
+            <a class = 'text links' href = "{% url 'labInfo' %}" onclick = 'return allow_access()'>View lab info</a>
+            <a class = 'text links' href = "{% url 'addNewLab' %}" onclick = 'return allow_access()'>Add a new lab</a>
+            <a class = 'text links' href = "{% url 'report' %}" onclick = 'return allow_access()'>Report a problem</a>
+            <a class = 'text links' href = "{% url 'AddNewPCs' %}" onclick = 'return allow_access()'>Add pc to lab</a>
+            <a class = "text links" href = "{% url 'list of pc' %}" onclick = 'return allow_access()'>Damaged PCs</a>
+        </div>
+
+        <div>
+
+            <img src = "{% static 'images/pc.png' %}" class = "image"/>
+
+            <form class="add-pcs">
+
+                PC's&nbsp ID:   <input class="id  pc-id" type = "number" placeholder="Enter PC's ID"/> 
+                <br>
+
+                Lab's     ID:   <input class="id lab-id" type = "number" placeholder="Enter lab's pc"/> 
+                <br>
+
+                <label>Status  &nbsp : </label>
+
+                <select class="status">
+
+                    <option> Active </option>
+                    <option> Under maintenance</option>
+
+                </select>
+
+            </form>    
+
+            <button class="btn-add" onclick="addPC()"> Add </button>
+        </div> 
+        
+    </body>
+</html>

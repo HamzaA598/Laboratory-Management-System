@@ -1,0 +1,46 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Lab info</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/viewLabInfo.css' %}">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script type='text/javascript' src= "{% static 'js/viewLabInfo.js' %}" defer></script>
+</head>
+<body onload="render()">
+    <div class = 'card' id = 'banner'>
+        <a class = 'text' href = "{% url 'homepage' %}"> <img class='img' src = "{% static 'images/homepage%20icon' %}" alt='homepage'></a>
+        <a class = 'text links' href = "{% url 'login' %}">Register/Login</a>
+        <a class = 'text links' href = "{% url 'labInfo' %}" onclick = 'return allow_access()'>View lab info</a>
+        <a class = 'text links' href = "{% url 'addNewLab' %}" onclick = 'return allow_access()'>Add a new lab</a>
+        <a class = 'text links' href = "{% url 'report' %}" onclick = 'return allow_access()'>Report a problem</a>
+        <a class = 'text links' href = "{% url 'AddNewPCs' %}" onclick = 'return allow_access()'>Add pc to lab</a>
+        <a class = "text links" href = "{% url 'list of pc' %}" onclick = 'return allow_access()'>Damaged PCs</a>
+    </div>
+
+    <div class="card">
+        <div class="text">
+            <p>Search for a lab by name</p>
+            <form class="sr" action="/action_page.php" onsubmit="return false;">
+                <input type="text" id = "searchBar" placeholder="Search.." name="search">
+                <img src="{% static 'images/search.png' %}" title ='search' alt="search" onclick = "searchLab()"/>
+                <img  src="{% static 'images/reset.png' %}" title ='reset' alt="search" onclick = "render()"/>
+            </form>
+            <br>
+            {% load static %}
+            <div id="wrapper">
+                {% load static %}
+
+
+            
+            </div>
+            
+        </div>
+    </div>
+ 
+</body>
+
+</html>

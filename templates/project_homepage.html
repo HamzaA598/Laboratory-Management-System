@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <title>Project Homepage</title>
+        <meta charset="UTF-8">
+
+        {% load static %}
+        <link rel="stylesheet" type="text/css" href="{% static 'css/project_homepage.css' %}">
+
+    </head>
+
+    <body>
+        
+        <div id = "HR">
+            Human Resources
+        </div>
+        
+        <div id = "SA">
+            Students Affairs
+        </div>
+        
+        <div id = "HS">
+            Higher Studies
+        </div>
+            
+        <a href = "{% url 'homepage' %}">
+            <div id = "LT">
+                Laboratory Tracking
+            </div>
+        </a>
+        
+    </body>
+
+</html>

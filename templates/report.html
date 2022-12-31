@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Report an issue</title>
+        <meta charset="UTF-8">
+        {% load static %}
+        <link rel="stylesheet" type="text/css" href="{% static 'css/report.css' %}">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script type='text/javascript' src= "{% static 'js/report.js' %}" defer></script>
+    </head>
+    <body>
+        <div class = 'card' id = 'banner'>
+            {% load static %}
+            <a class = 'text' href = "{% url 'homepage' %}"> <img class='img' src = "{% static 'images/homepage%20icon' %}" alt='homepage'></a>
+            <a class = 'text links' href = "{% url 'login' %}">Register/Login</a>
+            <a class = 'text links' href = "{% url 'labInfo' %}" onclick = 'return allow_access()'>View lab info</a>
+            <a class = 'text links' href = "{% url 'addNewLab' %}" onclick = 'return allow_access()'>Add a new lab</a>
+            <a class = 'text links' href = "{% url 'report' %}" onclick = 'return allow_access()'>Report a problem</a>
+            <a class = 'text links' href = "{% url 'AddNewPCs' %}" onclick = 'return allow_access()'>Add pc to lab</a>
+            <a class = "text links" href = "{% url 'list of pc' %}" onclick = 'return allow_access()'>Damaged PCs</a>
+        </div>
+
+        <div class="card">
+
+            <p class="text" style="font-size:20px;font-weight:bold;">Report an issue</p>
+            <br>
+
+            <p class="text ">Labortatory ID *  </p>
+
+            <form class="id">
+                <input class="field lab-id" type="number">
+            </form>
+
+            <p class="text ">Number of PCs that need repairs *  </p>
+            
+            <form class="id">
+                <input class="field pc-number" type="number">
+            </form>
+
+            <p class="text ">Problem type  </p>
+
+            <form  class="id">
+                <select class="field problem-type" id="problemType">
+                    <option>Software</option>
+                    <option>Hardware</option>
+                </select>
+            </form>
+
+            <p class="text ">Date of occurence * </p>
+
+            <form class="id">
+                <input class="field date" id="date" type="date">
+            </form>
+
+            <p class="text">Problem description *  </p>
+
+            <form>
+                <textarea class="field problem-description" id="description" type="text"></textarea>
+            </form>
+
+            <form class="btn-submit" style="text-align:right;" onsubmit="return validation();">
+                <input type="submit" value="Submit Report">
+            </form>
+
+        </div>
+    </body>
+</html>

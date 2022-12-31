@@ -1,0 +1,115 @@
+body {
+    background-color: #15202B;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+#banner
+{
+    height: 80px;
+    padding:30px;
+    width:75%;
+    margin:10px auto;
+    text-align: center;
+    clear: left;
+}
+.card
+{
+    background-color: #192734;
+    padding:20px 30px;
+    width: 55%;
+    margin:10px auto;
+}
+
+
+.text
+{
+    text-decoration: none;
+    color:white;
+    font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.links
+{
+    margin: 10px;
+    top: 70px;
+    position: relative;
+}
+.img
+{
+    height: 25px;
+    width: 25px;
+    float: left;
+}   
+
+form.sr input[type=text] {
+    padding: 10px;
+    font-size: 17px;
+    border: 1px solid grey;
+    float: left;
+    width: 80%;
+    background: #22303c;
+    color: white;
+    margin-bottom: 20px;
+    border-radius: 20px;
+    margin-left: 20px;
+}
+
+form.sr button {
+
+    float: left;
+    width: 20%;
+    padding: 10px;
+    background: #2196F3;
+    color: white;
+    font-size: 17px;
+    border: 1px solid grey;
+    border-left: none;
+    cursor: pointer;
+}
+
+
+img {
+    width: 40px;
+    height: 42px;
+    margin-left: 10px;
+}
+
+img:hover{
+    cursor: pointer;
+}
+
+
+.button {
+    margin-top: -10px;
+    border: 1px solid black;
+    outline: none;
+    height: 30px;
+    width: 30px;
+    border-radius: 30px;
+    color: white;
+    float: right;
+    cursor: pointer;
+    background-color: #47a1eb;
+}
+
+.button:hover {
+
+    background: white;
+    color: #47a1eb;
+}
+
+.labinfo
+{
+    padding: 10px;
+    width: 100%;
+    border-bottom: 1px solid white;
+}
+
+.field
+{
+    height: 16px;
+    border: none;
+    outline: none;
+    background: #192734;
+    color: white;
+}

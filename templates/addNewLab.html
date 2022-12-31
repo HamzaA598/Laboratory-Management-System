@@ -1,0 +1,52 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <title>Add a new lab</title>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" type="text/css" href="{% static 'css/addNewLab.css' %}">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script type='text/javascript' src= "{% static 'js/addNewLab.js' %}" defer></script>
+    </head>
+
+    <body>
+        <div class = 'card' id = 'banner'>
+            {% load static %}
+            <a class = 'text' href = "{% url 'homepage' %}"> <img class='img' src = "{% static 'images/homepage%20icon' %}" alt='homepage'></a>
+            <a class = 'text links' href = "{% url 'login' %}">Register/Login</a>
+            <a class = 'text links' href = "{% url 'labInfo' %}" onclick = 'return allow_access()'>View lab info</a>
+            <a class = 'text links' href = "{% url 'addNewLab' %}" onclick = 'return allow_access()'>Add a new lab</a>
+            <a class = 'text links' href = "{% url 'report' %}" onclick = 'return allow_access()'>Report a problem</a>
+            <a class = 'text links' href = "{% url 'AddNewPCs' %}" onclick = 'return allow_access()'>Add pc to lab</a>
+            <a class = "text links" href = "{% url 'list of pc' %}" onclick = 'return allow_access()'>Damaged PCs</a>
+        </div>
+        
+        <div class = "addbox">
+            <img src = "{% static 'images/lab.png' %}" class = "avatar"/>
+            
+            <form method ="post" action = "../database/createLab/" onsubmit="return validateInput()">
+                ID                  <input id="ID" type = "number" name = "labID" placeholder="Enter ID"/> <br>
+                Name                <input id="name" type = "text" name = "labName" placeholder="Enter Name"/> <br>
+                Building Number     <input id="building" type = "number" name = "bNum" placeholder = "Enter building no."/> <br>
+                Floor Number        <input id="floor" type = "number" name = "fNum" placeholder="Enter floor no."/> <br>
+                Number of PCs       <input id="pcNum" type = "number" name = "pcNum" placeholder="Enter no. of PCs"/> <br>
+                Capacity            <input id="capacity" type = "number" name = "cap" placeholder="Enter capacity"/> <br>
+                Number of Chairs    <input id="chairs" type = "number" name = "chairNum" placeholder="Enter no. of chairs"/> <br>
+                
+                <label for="status">Status: </label>
+                <select name="labStatus" id="status">
+                  <option value="Active">Active</option>
+                  <option value="Under maintenance">Under maintenance</option>
+                </select>
+                <br>
+                <input type="image" src= "{% static 'images/add.png' %}" class = "add" alt="submit" style="width: 60px;">
+            </form>
+                
+        </div>
+
+        
+    </body>
+    
+</html>
